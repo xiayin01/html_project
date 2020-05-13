@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>秒表</title>
+		<style>
+			#div1 {
+				width: 300px;
+				height: 400px;
+				background-color: gray;
+				margin: 100px auto;
+				text-align: center;
+			}
+			#count {
+				width: 200px;
+				height: 150px;
+				line-height: 150px;
+				margin: auto;
+				font-size: 40px;
+			}
+			#div1 input {
+				width: 150px;
+				height: 40px;
+				background-color: yellow;
+				font-size: 25px;
+				margin-top: 20px;
+			}
+		</style>
+		<script type="text/javascript">
+			function $(id) {
+				return document.getElementById(id);
+			}
+
+			function showNum(num) {
+				if (num < 10) {
+					return "0" + num;
+				} else {
+					return num;
+				}
+			}
+			var count = 0; //总秒数
+			var timer = null;
+			window.onload = function() {
+				$("start").onclick = function() {
+					timer = setInterval(function() {
+						count++;
+						//改变页面时分秒
+						$("id_S").innerHTML = showNum(count % 60);
+						$("id_M").innerHTML = showNum(parseInt(count / 60));
+						$("id_H").innerHTML = showNum(parseInt(count / 3600));
+						//暂停
+						$("pause").onclick = function() {
+							clearInterval(timer);
+						};
+						//结束
+						$("stop").onclick = function() {
+							clearInterval(timer);
+							//总秒数清零
+							count = 0;
+							//页面清零
+							$("id_S").innerHTML = "00";
+							$("id_M").innerHTML = "00";
+							$("id_H").innerHTML = "00";
+						};
+					}, 100);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="div1">
+			<div id="count">
+				<span id="id_H">00</span>:
+				<span id="id_M">00</span>:
+				<span id="id_S">00</span>	
+			</div>
+			<input type="button" id="start" value="开始" />
+			<input type="button" id="pause" value="暂停" />
+			<input type="button" id="stop" value="结束" />
+		</div>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//通过promise这个构造函数，来创建一个对象
+			//这个promise对象，有三个状态：pending，fulfill，reject
+			//promise构造函数有一个参数，这个参数是一个回调函数。这个回调函数接受2个参数，这2个参数都可以改变
+			//promise对象的状态，第一个参数：可以将状态pending-->fulfill,第二个参数：可以将状态pending-->reject
+			var promise = new Promise(function(fulfill, reject) {
+				setInterval(function() {
+					var num = Math.floor(Math.random() * 100);
+					if (num % 2 === 0) {
+						fulfill(num);
+					} else {
+						reject(num);
+					}
+				}, 1000);
+			});
+			promise.then(function(num) {
+				console.log('fulfill:' + num);
+			}).catch(function(num) {
+				console.log('reject:' + num);
+			});
+		</script>
+	</body>
+</html>

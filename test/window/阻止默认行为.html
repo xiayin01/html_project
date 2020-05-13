@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<a href="">test</a>
+		<script type="text/javascript">
+			var oTest = document.getElementsByTagName("a")[0];
+			oTest.onclick = function(e) {
+				console.log("test");
+				//1.
+				//return false;
+				//2.
+				var evt = e || event;
+				//evt.preventDefault();
+				//3.
+				evt.returnValue = false;
+			}
+			//阻止右键菜单
+			document.oncontextmenu = function() {
+				return false;
+			}
+		</script>
+	</body>
+</html>

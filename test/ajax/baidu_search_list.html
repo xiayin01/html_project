@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>jsonp-跨域</title>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+	</head>
+	<body>
+		<input type="text" />
+		<ul></ul>
+		<script type="text/javascript">
+			function getData(data) {
+				var script = document.querySelector('#jsonp');
+				script.parentNode.removeChild(script);
+				$('ul').html('');
+				for (var i = 0; i < data.s.length; i++) {
+					$('<li>' + data.s[i] + '</li>').appendTo('ul');
+				}
+			}
+
+			function getList(wd) {
+				var script = document.createElement('script');
+				script.id = 'jsonp';
+				script.src = 'http://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?cb=getData&wd=' + wd;
+				document.body.appendChild(script);
+			}
+			$('input').keyup(function() {
+				var wd = $(this).val();
+				getList(wd);
+			})
+		</script>
+	</body>
+</html>

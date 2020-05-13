@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>toggleClass</title>
+		<script type="text/javascript" src="./js/jquery-3.5.0.js"></script>
+		<style type="text/css">
+			div {
+				width: 100px;
+				height: 100px;
+				cursor: pointer;
+			}
+
+			.play {
+				background: green;
+			}
+
+			.pause {
+				background: gray;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+		<label> 选中<input type="checkbox" checked /></label>
+		<div class="pause"></div>
+		<script type="text/javascript">
+			$('li').html('li');
+			$('input[type=checkbox]').change(function() {
+				console.log("--attr---:" + $(this).attr('checked'));
+				console.log("---prop---:" + $(this).prop('checked'));
+			});
+			$('div').click(function() {
+				$(this).toggleClass('pause');
+				$(this).toggleClass('play');;
+			})
+		</script>
+	</body>
+</html>

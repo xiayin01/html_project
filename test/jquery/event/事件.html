@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>事件</title>
+		<script src="../js/jquery-3.5.0.js"></script>
+	</head>
+	<body>
+		<div id="container">
+			<ul class="list">
+				<li class="item">
+					<p>1</p>
+				</li>
+				<li class="item">
+					<p>2</p>
+				</li>
+				<li class="item">
+					<p id="p3" class="vip">3</p>
+				</li>
+				<li class="item">
+					<p>4</p>
+				</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			$('li').on('mouseover', function() {
+				$(this).css('background', 'red');
+			}).on('mouseout', function() {
+				$(this).css('background', 'blue');
+			})
+			//事件解绑,2个参数
+			//1.event type
+			//2.callback name
+			$('li:eq(3)').off('mouseover');
+			//添加新元素
+			$('<li>新元素</li>').appendTo('ul');
+		</script>
+	</body>
+</html>

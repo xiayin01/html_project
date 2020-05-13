@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function() {
+				var oBtn = document.getElementById("btn");
+				oBtn.onclick = function() {
+					//只有一个参数时，点击一次，打开一个新窗口，可以打开多个
+					//open("http://www.baidu.com");
+					//两个参数。在指定的名字的窗口打开
+					//open("http://www.baidu.com","百度");
+					//三个参数
+					open("http://www.baidu.com","百度","width=400,height=400,top=200,left=200");
+					//opener 打开当前窗口的父对象的window对象 IE不支持该对象
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" id="btn" value="按钮" />
+	</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		* {
+			margin: 0;
+			/*将所有的元素边距都设置成0*/
+			padding: 0;
+			/*填充为0*/
+		}
+
+		#box {
+			width: 720px;
+			overflow: auto;
+			margin: auto;
+		}
+
+		.item {
+			width: 200px;
+			height: 136px;
+			float: left;
+			margin: 20px;
+			border: 5px solid black;
+			padding: 15px;
+		}
+	</style>
+
+	<script type="text/javascript">
+		
+		var a=10;
+		switch(a){
+			default:
+			alert("---");
+			break;
+			case 10:
+			alert("====");
+			break;
+		}
+		var x = 10;
+		alert(x++); //10.先取x的值，然后再进行+1操作。++后置
+		var z = x;
+		alert(z);
+		var y = -1;
+		alert(++y); //0.先进行+1操作，然后再取y的值。++前置
+		
+		alert(Boolean(-3));
+		alert(parseFloat("3.15"));
+		
+		function print(n){
+			for(var i=0;i<n;i++){
+				document.write("hello world "+i+"</br>");
+			}
+		}
+		
+		print(5);
+	</script>
+	<body>
+		<div id="box">
+			<div class="item" style="background-color: antiquewhite;"></div>
+			<div class="item" style="background-color: aqua;"></div>
+			<div class="item" style="background-color: aquamarine;"></div>
+		</div>
+	</body>
+</html>

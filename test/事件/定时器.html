@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			/**
+			 * var timerId=setInterval(function(){
+				 },毫秒数);
+				 timerId:定时器id
+				 clearInterval(timerId);取消定时器
+			 */
+			var i = 0;
+			window.onload = function() {
+				var oBtn = document.getElementById("btn");
+				oBtn.onclick = function() {
+					var timerId = setInterval(function() {
+						document.write(i++ + "</br>");
+						if (i == 5) {
+							clearInterval(timerId);
+						}
+					}, 1000);
+				};
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" id="btn" value="按钮" />
+	</body>
+</html>

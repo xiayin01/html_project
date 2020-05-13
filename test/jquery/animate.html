@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>animate</title>
+		<script type="text/javascript" src="./js/jquery-3.5.0.js"></script>
+		<style type="text/css">
+			div {
+				width: 100px;
+				height: 100px;
+				background: greenyellow;
+			}
+		</style>
+	</head>
+	<body>
+		<button>显示</button>
+		<button>隐藏</button>
+		<button>停止</button>
+		<div></div>
+		<script type="text/javascript">
+			$('button:first').click(function() {
+				/* $('div').animate({
+					width: 500,
+					height: 600
+				}); */
+				$('div').animate({
+					width: 300
+				}, 5000).animate({
+					height: 400
+				})
+			})
+			$('button:eq(1)').click(function() {
+				$('div').animate({
+					width: 100,
+					height: 100
+				});
+			})
+			$('button:last').click(function() {
+				//只停止当前队列中的动画，如果队列中还有其他动画，则执行下一个动画
+				//如果要全部都停止，传入参数true；
+				$('div').stop(true);
+			})
+		</script>
+	</body>
+</html>

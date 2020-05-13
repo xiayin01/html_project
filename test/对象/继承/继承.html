@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function paddingNum(obj, size) {
+				var split = obj.toString().split(".");
+				if (split.length == 1) {
+					obj += '.';
+					for (var i = 0; i < size; i++) {
+						obj += '0';
+					}
+				}
+				if (split.length > 1) {
+					if (split[1].length < size) {
+						for (var i = 0; i < (size - split[1].length); i++) {
+							obj += '0';
+						}
+					}
+				}
+				return obj;
+			}
+			var a = 14;
+			console.log(paddingNum(a, 3));
+			var b = 14.51;
+			console.log(paddingNum(b, 2));
+			var c = 19.005
+			console.log(paddingNum(c, 2));
+
+			function Person(name, age) {
+				this.age = age;
+				this.name = name;
+			}
+			//原型模式，不会被继承
+			Person.prototype.sayHello = function() {
+				alert(this.name + " hello");
+			}
+
+			function Student(name, age, id) {
+				//继承父类构造函数apply()/call()
+				Person.apply(this, [name, age]);
+				//Person.call(this, name, age);
+				this.id = id;
+				this.sayHello = function() {
+					alert("id:" + id + " 学习ing...");
+				}
+			}
+			var student = new Student('小明', '20', '1');
+			student.sayHello();
+		</script>
+	</body>
+</html>
