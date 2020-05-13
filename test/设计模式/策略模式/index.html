@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>策略模式</title>
+	</head>
+	<body>
+		<script src="./strategy.js"></script>
+		<script type="text/javascript">
+			function Go2Victory(strategy) {
+				this.strategy = strategy;
+			}
+			Go2Victory.prototype.victory = function() {
+				this.strategy.tatics();
+			}
+			var v = new Go2Victory(new StrategyA());
+			v.victory();
+			v=new Go2Victory(new StrategyB());
+			v.victory();
+		</script>
+	</body>
+</html>

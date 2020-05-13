@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<ul id="test"></ul>
+		<script type="text/javascript">
+			//es5
+			var obj = {
+				"name": "john",
+				"age": 20
+			};
+			var name = obj.name;
+			var age = obj.age;
+			console.log(name + "的年龄:" + age);
+			//es6
+			let user = {
+				"name1": "xxx",
+				"age1": 20
+			};
+			let {
+				name1,
+				age1
+			} = user;
+			console.log(`${name1}的年龄:${age1}`);
+			var arr = [0, 1, 2, 3];
+			let oUl = document.getElementById("test");
+			var html = "";
+			//es5
+			for (var i in arr) {
+				html += "<li>" + arr[i] + "</li>";
+			}
+			oUl.innerHTML = html;
+			//es6
+			for(var i in arr){
+				html+=`<li>
+				<a href="">${arr[i]}>+3</a>
+				</li>`
+			}
+			oUl.innerHTML = html;
+		</script>
+	</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>checked</title>
+		<script type="text/javascript" src="./js/jquery-3.5.0.js">
+
+		</script>
+	</head>
+	<body>
+		<table border="1" cellspacing="0">
+			<thead>
+				<tr>
+					<th><input type="checkbox" /></th>
+					<th>姓名</th>
+					<th>年龄</th>
+					<th>爱好</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><input type="checkbox" /></td>
+					<td>黄忠</td>
+					<td>20</td>
+					<td>拆迁</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" /></td>
+					<td>鲁班</td>
+					<td>10</td>
+					<td>晃荡</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" /></td>
+					<td>赵云</td>
+					<td>30</td>
+					<td>打野</td>
+				</tr>
+			</tbody>
+		</table>
+		<script type="text/javascript">
+			$('thead input').change(function() {
+				var isChecked = $(this).prop('checked');
+
+				$('tbody input').prop('checked', isChecked);
+			})
+
+			$('tbody input').change(function() {
+				var allCount = $('tbody input').length;
+				var checkedCount = $('tbody input:checked').length;
+				var isAllChecked = allCount === checkedCount;
+				$('thead input').prop('checked', isAllChecked);
+			})
+		</script>
+	</body>
+</html>

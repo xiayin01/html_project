@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			var a = [1, 2, 3];
+			//a.forEach(alert);
+			a.forEach(function(item, index, array) {
+				document.write("item:" + item + ",index:" + index + "</br>");
+			});
+			var a = [10, 2, 4, 42];
+			//某一个元素满足return表达式，结束，返回true，否则，返回false
+			var res = a.some(function(item, index, array) {
+				return item == 12;
+			});
+			document.write("some():" + res + "</br>");
+			//所有的元素都要满足return后面的表达式，全部都满足，返回true，一个不满足，结束，返回false
+			res = a.every(function(item, index, array) {
+				return item > 1;
+			});
+			document.write("every():" + res + "</br>");
+			res = a.reduce(function(pre, next, index, array) {
+				return pre + next;
+			});
+			document.write("reduce():" + res + "</br>");
+			res = a.map(function(item, index, array) {
+				return item + 2;
+			});
+			document.write("map():" + res + "</br>");
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>放大镜</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="./jQuery.magnifier.css" />
+	</head>
+	<body>
+		<div class="magnifier">
+			<div class="left">
+				<img src="./img/small.jpg" alt="" />
+				<div class="float"></div>
+				<div class="mask"></div>
+			</div>
+			<div class="right"></div>
+		</div>
+		<script src="../../js/jquery-3.5.0.js"></script>
+		<script src="./jQuery.magnifier.js"></script>
+		<script>
+			$('.magnifier').magnifier();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//es5
+			var foo = function() {
+				console.log(this);
+			}
+			foo();
+			//this	指向定义时所在的作用域，而不是执行时所在的作用域
+			let foo1 = () => console.log(this);
+			foo1();
+			name = "测试";
+			var obj = {
+				"name": "xxx",
+				"sayHello": function() {
+					console.log("---obj0---:" + this.name);
+				}
+			}
+			obj.sayHello();
+			var obj1 = {
+				"name": "dsa",
+				"sayHello": () => {
+					console.log("---obj1---:" + this.name);
+				}
+			}
+			obj1.sayHello();
+			let obj2 = {
+				"name": "daw",
+				"sayHello": function() {
+					setTimeout(() => {
+						console.log("---obj2---:" + this.name);
+					}, 1000);
+				}
+			}
+			obj2.sayHello();
+			let obj3 = {
+				"name": "cas",
+				"sayHello": () => {
+					setTimeout(() => {
+						console.log("---obj3---:" + this.name);
+					}, 1000);
+				}
+			}
+			obj3.sayHello();
+			let obj4 = {
+				"name": "cas",
+				"sayHello": () => {
+					setTimeout(function() {
+						console.log("---obj4---:" + this.name);
+					}, 1000);
+				}
+			}
+			obj4.sayHello();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../jquery/js/jquery-3.5.0.min.js"></script>
+		<script type="text/javascript">
+			window.onload = function() {
+				var oBtn = document.getElementById("btn");
+				oBtn.onclick = function() {
+					//加载指定的url。浏览器中有回退按钮
+					//location.assign("http://www.baidu.com");
+					//重载当前url.如果传入参数true：强制加载，从服务器源头重新加载
+					//location.reload(true);
+					//用新的ur替换当前页面。可以避免产生替换前的历史纪录。浏览器中没有回退按钮
+					location.replace("http://www.baidu.com");
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" id="btn" value="按钮" />
+	</body>
+</html>

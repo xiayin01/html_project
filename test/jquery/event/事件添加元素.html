@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>事件添加</title>
+		<script src="../js/jquery-3.5.0.js"></script>
+	</head>
+	<body>
+		<ul class="list">
+			<li class="item">
+				<p>1</p>
+			</li>
+			<li class="item">
+				<p>2</p>
+			</li>
+			<li class="item">
+				<p id="p3" class="vip">3</p>
+			</li>
+			<li class="item">
+				<p>4</p>
+			</li>
+		</ul>
+		<button>删除节点</button>
+		<button>删除节点内容</button>
+		<script type="text/javascript">
+			var $append = $('<br><label>新元素append</label><br>');
+			//方法1：append
+			$('body').append($append);
+			var $appendTo = $('<label>新元素appendTo</label><br>');
+			//方法1：appendTo
+			$appendTo.appendTo('body');
+			//放在最前面
+			var $li0 = $('<li>0</li>');
+			$('ul').prepend($li0);
+			//指定位置放置
+			$('li:eq(3)').after($('<li>3.5</li>'));
+			$('<li>4.5</li>').insertAfter('li:eq(5)');
+			$('button:first').click(function() {
+				$('li:last').remove();
+			})
+			$('button:last').click(function() {
+				$('li:first').empty();
+			})
+		</script>
+	</body>
+</html>
